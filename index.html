@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הנגן שלי</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rotate-device-message">
+        <div class="rotate-message-container">
+            <div class="rotate-message-icon">
+                <div class="device">
+                    <div class="device-frame"></div>
+                    <div class="device-line"></div>
+                    <div class="device-inner-line"></div>
+                    <div class="device-circle"></div>
+                </div>
+            </div>
+            <div class="rotate-message-text">יש לסובב את המכשיר למצב מאוזן <br> בכדי להתחיל את הנגן</div>
+        </div>
+    </div>
+    <div id="content">
+        <section>
+            <h1>הנגן שלי</h1>
+            <div class="chart" id="graph" data-percent="88">
+                <button id="waveforms" class="waveform" data-wave="sine" aria-label="Sine Waveform">Sine</button>
+                <button id="waveforms" class="waveform" data-wave="triangle" aria-label="Triangle Waveform">Triangle</button>
+                <button id="waveforms" class="waveform" data-wave="square" aria-label="Square Waveform">Square</button>
+                <button id="waveforms" class="waveform" data-wave="sawtooth" aria-label="Sawtooth Waveform">Sawtooth</button>
+                <label for="reverb">Reverb:</label>
+                <input type="range" id="reverb" min="0" max="1" step="0.01" value="0" aria-label="Reverb">
+                <label for="delay">Delay:</label>
+                <input type="range" id="delay" min="0" max="1" step="0.01" value="0" aria-label="Delay">
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" aria-label="Volume">
+            </div>
+        </section>
+        <main>
+            <div id="piano">
+                <div class="row">
+                    <!-- First Octave - Square -->
+                    <div class="key white-key square" data-note="C" style="background-color: red;" aria-label="C Note">C</div>
+                    <div class="key black-key square" data-note="C#" aria-label="C# Note"></div>
+                    <div class="key white-key square" data-note="D" style="background-color: brown;" aria-label="D Note">D</div>
+                    <div class="key black-key square" data-note="D#" aria-label="D# Note"></div>
+                    <div class="key white-key square" data-note="E" style="background-color: grey;" aria-label="E Note">E</div>
+                    <div class="key white-key square" data-note="F" style="background-color: blue;" aria-label="F Note">F</div>
+                    <div class="key black-key square" data-note="F#" aria-label="F# Note"></div>
+                    <div class="key white-key square" data-note="G" style="background-color: black;" aria-label="G Note">G</div>
+                    <div class="key black-key square" data-note="G#" aria-label="G# Note"></div>
+                    <div class="key white-key square" data-note="A" style="background-color: yellow;" aria-label="A Note">A</div>
+                    <div class="key black-key square" data-note="A#" aria-label="A# Note"></div>
+                    <div class="key white-key square" data-note="B" style="background-color: green;" aria-label="B Note">B</div>
+                </div>
+                <div class="row">
+                    <!-- Second Octave - Circle -->
+                    <div class="key white-key circle" data-note="C2" style="background-color: red;" aria-label="C2 Note">C</div>
+                    <div class="key black-key circle" data-note="C#2" aria-label="C#2 Note"></div>
+                    <div class="key white-key circle" data-note="D2" style="background-color: brown;" aria-label="D2 Note">D</div>
+                    <div class="key black-key circle" data-note="D#2" aria-label="D#2 Note"></div>
+                    <div class="key white-key circle" data-note="E2" style="background-color: grey;" aria-label="E2 Note">E</div>
+                    <div class="key white-key circle" data-note="F2" style="background-color: blue;" aria-label="F2 Note">F</div>
+                    <div class="key black-key circle" data-note="F#2" aria-label="F#2 Note"></div>
+                    <div class="key white-key circle" data-note="G2" style="background-color: black;" aria-label="G2 Note">G</div>
+                    <div class="key black-key circle" data-note="G#2" aria-label="G#2 Note"></div>
+                    <div class="key white-key circle" data-note="A2" style="background-color: yellow;" aria-label="A2 Note">A</div>
+                    <div class="key black-key circle" data-note="A#2" aria-label="A#2 Note"></div>
+                    <div class="key white-key circle" data-note="B2" style="background-color: green;" aria-label="B2 Note">B</div>
+                </div>
+                <div class="row">
+                    <!-- Third Octave - Triangle -->
+                    <div class="key white-key triangle" data-note="C3" style="background-color: red;" aria-label="C3 Note">C</div>
+                    <div class="key black-key triangle" data-note="C#3" aria-label="C#3 Note"></div>
+                    <div class="key white-key triangle" data-note="D3" style="background-color: brown;" aria-label="D3 Note">D</div>
+                    <div class="key black-key triangle" data-note="D#3" aria-label="D#3 Note"></div>
+                    <div class="key white-key triangle" data-note="E3" style="background-color: grey;" aria-label="E3 Note">E</div>
+                    <div class="key white-key triangle" data-note="F3" style="background-color: blue;" aria-label="F3 Note">F</div>
+                    <div class="key black-key triangle" data-note="F#3" aria-label="F#3 Note"></div>
+                    <div class="key white-key triangle" data-note="G3" style="background-color: black;" aria-label="G3 Note">G</div>
+                    <div class="key black-key triangle" data-note="G#3" aria-label="G#3 Note"></div>
+                    <div class="key white-key triangle" data-note="A3" style="background-color: yellow;" aria-label="A3 Note">A</div>
+                    <div class="key black-key triangle" data-note="A#3" aria-label="A#3 Note"></div>
+                    <div class="key white-key triangle" data-note="B3" style="background-color: green;" aria-label="B3 Note">B</div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
